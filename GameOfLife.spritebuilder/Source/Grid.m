@@ -161,12 +161,6 @@ static const int GRID_COLUMNS = 10;
             // access the creature in the cell that corresponds to the current row/column
             Creature *currentCreature = _gridArray[i][j];
             
-            //count number of live creatures
-            if (currentCreature.isAlive)
-            {
-                numAlive++;
-            }
-            
             //if the creature has 3 live neighbors it should be alive
             if (currentCreature.livingNeighbors == 3)
             {
@@ -177,6 +171,12 @@ static const int GRID_COLUMNS = 10;
             else if (currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4)
             {
                 currentCreature.isAlive = FALSE;
+            }
+            
+            //count number of live creatures
+            if (currentCreature.isAlive)
+            {
+                numAlive++;
             }
         }
     }
